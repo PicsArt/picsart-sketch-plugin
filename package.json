@@ -14,12 +14,15 @@
     ]
   },
   "scripts": {
-    "build": "skpm-build",
+    "test": "jest",
+    "prebuild": "node prebuild-check.js",
+    "build": "npm run prebuild && skpm-build",
     "watch": "skpm-build --watch",
     "start": "skpm-build --watch --run",
     "postinstall": "npm run build && skpm-link"
   },
   "devDependencies": {
-    "@skpm/builder": "^0.9.5"
+    "@skpm/builder": "^0.9.5",
+    "jest": "^29.7.0"
   }
 }
